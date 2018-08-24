@@ -36,7 +36,7 @@ public class User {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name="user_role", joinColumns = {@JoinColumn(name="user_id")}, 
 	       inverseJoinColumns = {@JoinColumn(name="rol_id")}  )
-	private Set<Role> roles;
+	private List<Role> roles;
 
     public User() {
     }
@@ -89,11 +89,11 @@ public class User {
         this.posts = posts;
     }
 
-    public Set<Role> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 
